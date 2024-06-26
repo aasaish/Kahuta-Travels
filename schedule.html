@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bus Schedule - Kahuta Travells</title>
+  
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url("images/schedule.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px; /* Increased padding for better spacing */
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; /* Added position relative to allow absolute positioning of header image */
+}
+
+    header img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: white;
+  color: black;
+}
+
+main {
+  padding: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.foam {
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0);
+  width: 800px;
+  margin: 100px auto auto auto;
+}
+
+.foam h2 {
+  color: black;
+  font-size: 35px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 35px;
+}
+
+.foam hr {
+  border: 0;
+  height: 1px;
+  background-color: #ccc;
+  margin-bottom: 80px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  color: white;
+  font-size: 25px;
+}
+
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+  font-size: 25px;
+}
+
+.form-group button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 30px;
+}
+
+.form-group button:hover {
+  background-color: #0056b3;
+}
+
+footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: .1px 0;
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+    }
+    nav ul li.active a {
+      background-color: white;
+      color: black;
+    }
+
+  </style>
+ 
+
+  <script>
+    // JavaScript to highlight active page in navigation
+    document.addEventListener("DOMContentLoaded", function() {
+      const currentLocation = window.location.href;
+
+      const navLinks = document.querySelectorAll("nav ul li a");
+
+      navLinks.forEach(link => {
+        if (link.href === currentLocation) {
+          link.parentElement.classList.add("active");
+        }
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <header>
+    <a href="index.html"><img src="images/logo.jpg" alt="Kahuta Travels Logo"></a>
+    
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="schedule.html">Bus Schedule</a></li>
+          <li><a href="login.php">Reservation</a></li>
+          
+          <li><a href="login.php">Login</a></li>
+          <li><a href="signup.php">Signup</a></li>
+        </ul>
+      </nav>
+    
+  </header>
+
+  <main>
+    <div class="foam">
+      <h2>Bus Schedule</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Origin</th>
+            <th>Destination</th>
+            <th>Departure Time</th>
+            <th>Arrival Time</th>
+            <th>Travel Duration</th>
+            <th>Price (Simple/Business)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Islamabad</td>
+            <td>Lahore</td>
+            <td>8:00 AM</td>
+            <td>1:00 PM</td>
+            <td>5h</td>
+            <td>Rs 1000 / Rs 1500</td>
+          </tr>
+          <tr>
+            <td>Lahore</td>
+            <td>Islamabad</td>
+            <td>2:00 PM</td>
+            <td>7:00 PM</td>
+            <td>5h</td>
+            <td>Rs 1000 / Rs 1500</td>
+          </tr>
+          <tr>
+            <td>Islamabad</td>
+            <td>Karachi</td>
+            <td>6:00 AM</td>
+            <td>6:00 PM</td>
+            <td>12h</td>
+            <td>Rs 4000 / Rs 8000</td>
+          </tr>
+          <tr>
+            <td>Karachi</td>
+            <td>Islamabad</td>
+            <td>8:00 PM</td>
+            <td>8:00 AM</td>
+            <td>12h</td>
+            <td>Rs 4000 / Rs 8000</td>
+          </tr>
+          <tr>
+            <td>Lahore</td>
+            <td>Karachi</td>
+            <td>10:00 AM</td>
+            <td>5:00 PM</td>
+            <td>7h</td>
+            <td>Rs 3000 / Rs 6000</td>
+          </tr>
+          <tr>
+            <td>Karachi</td>
+            <td>Lahore</td>
+            <td>4:00 PM</td>
+            <td>11:00 PM</td>
+            <td>7h</td>
+            <td>Rs 3000 / Rs 6000</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>**Note:** This schedule covers the current day and the next 2 upcoming days.</p>
+      <a href="reservation.html" class="btn">Book Now</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; Copyright Kahuta Travells. All Rights Reserved.</p>
+    <p>Contact us: <a href="mailto:info@kahutatravels.com">info@kahutatravels.com</a></p>
+  </footer>
+
+</body>
+
+</html>

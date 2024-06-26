@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="images/logo.jpg" alt="Kahuta Travels Logo"></a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="schedule.html">Bus Schedule</a></li>
+        <li><a href="login.php">Reservation</a></li>
+        
+        <li><a href="login.php">Login</a></li>
+        <li><a href="signup.php">Signup</a></li>
+      </ul>
+    </nav>
+    <style>
+      /* Additional styles for active page */
+      nav ul li.active a {
+        background-color: white;
+        color: black;
+      }
+    </style>
+  
+    <script>
+      // JavaScript to highlight active page in navigation
+      document.addEventListener("DOMContentLoaded", function() {
+        const currentLocation = window.location.href;
+  
+        const navLinks = document.querySelectorAll("nav ul li a");
+  
+        navLinks.forEach(link => {
+          if (link.href === currentLocation) {
+            link.parentElement.classList.add("active");
+          }
+        });
+      });
+    </script>
+  </header>
+    <div class="welcome-container">
+      <h2>Welcome to Kahuta Travells</h2>
+      <p>We offer convenient and reliable bus travel across various destinations. Explore our website to learn more about us, view our bus schedule, and make your reservation.Explore the vibrant cities, stunning landscapes, and rich cultural heritage of Pakistan with Kahuta Travels. Whether you're planning a business trip, a family vacation, or a solo adventure, we'll help you get there safely and comfortably.</p>
+      <a href="login.php" class="btn">Book Now</a>
+    </div>
+
+    <footer>
+      <p>&copy; Copyright Kahuta Travells. All Rights Reserved.</p>
+      <p>Contact us: <a href="mailto:info@kahutatravels.com">info@kahutatravels.com</a></p>
+    </footer>
+  
+</body>
+</html>

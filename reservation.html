@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservation - Kahuta Travels</title>
+  <style>
+    body 
+
+    #reservation-details {
+      background-color: rgb(177, 164, 164);
+      color: black;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url("http://localhost/KAHUTA%20TRAVELS/reserve-ezgif.com-webp-to-jpg-converter.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px; /* Increased padding for better spacing */
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; /* Added position relative to allow absolute positioning of header image */
+}
+
+header img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px; /* Adjust top position to align with header top */
+  left: 20px; /* Adjust left position to align with header left */
+}
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    nav ul li {
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: bold;
+      padding: 0.5rem;
+      border-radius: 0.25rem;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: white;
+      color: black;
+    }
+
+    button {
+      padding: 20px 70px;
+      background-color: green;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    button:hover {
+      background-color: darkgreen;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+      width: 100%;
+      position: relative;
+      bottom: 0;
+      margin-top: 70px;
+    }
+
+    .foam {
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0);
+      width: 700px;
+      margin: 0 auto;
+    }
+
+    .foam h2 {
+      color: black;
+      font-size: 35px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .foam hr {
+      border: 0;
+      height: 1px;
+      background-color: #6e6b6b;
+      margin-bottom: 80px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 10px;
+      color: rgb(231, 229, 229);
+      font-size: 25px;
+    }
+
+    .form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+  font-size: 25px;
+  color: #d8d5d5; /* Set text color */
+}
+
+
+    .form-group button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 30px;
+    }
+
+    .form-group button:hover {
+      background-color: #0056b3;
+    }
+
+    #download-pdf {
+      background-color: #070606;
+      margin-top: 20px;
+    }
+
+    #download-pdf:hover {
+      background-color: #706e6e;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="index.html"><img src="images/logo.jpg" alt="Kahuta Travels Logo"></a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="schedule.html">Bus Schedule</a></li>
+        <li><a href="login.php">Reservation</a></li>
+        
+       
+      </ul>
+    </nav>
+    <style>
+      /* Additional styles for active page */
+      nav ul li.active a {
+        background-color: white;
+        color: black;
+      }
+    </style>
+  
+    <script>
+      // JavaScript to highlight active page in navigation
+      document.addEventListener("DOMContentLoaded", function() {
+        const currentLocation = window.location.href;
+  
+        const navLinks = document.querySelectorAll("nav ul li a");
+  
+        navLinks.forEach(link => {
+          if (link.href === currentLocation) {
+            link.parentElement.classList.add("active");
+          }
+        });
+      });
+    </script>
+  </header>
+
+  <main>
+    <div class="foam">
+      <h2>Make Your Reservation</h2>
+      <hr>
+      <form id="reservation-form" action="reservation.php" method="POST">
+
+        <div class="form-group">
+          <label for="cnic">CNIC (without dashes)</label>
+          <input type="text" name="cnic" id="cnic" pattern="[0-9]{13}" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" name="phone" id="phone" pattern="[0-9]{11}" required>
+        </div>
+        <div class="form-group">
+          <label for="travel-date">Travel Date</label>
+          <input type="date" name="travel-date" id="travel-date" required>
+        </div>
+        <div class="form-group">
+          <label for="origin">Origin</label>
+          <select name="origin" id="origin" required>
+            <option value="">Select Origin City</option>
+            <option value="islamabad">Islamabad</option>
+            <option value="lahore">Lahore</option>
+            <option value="karachi">Karachi</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="destination">Destination</label>
+          <select name="destination" id="destination" required>
+            <option value="">Select Destination City</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="class">Class</label>
+          <select name="class" id="class" required>
+            <option value="">Select Class</option>
+            <option value="economy">Economy</option>
+            <option value="business">Business</option>
+          </select>
+        </div>
+        <div class="form-group" style="text-align: center;">
+          <button type="submit" id="book-button">Book</button>
+        </div>
+      </form>
+
+      <div id="reservation-details" class="hidden">
+        <h2>Reservation Details</h2>
+        <p>CNIC: <span id="display-cnic"></span> | Phone: <span id="display-phone"></span></p>
+        <p>Date: <span id="display-travel-date"></span> | Origin: <span id="display-origin"></span></p>
+        <p>Destination: <span id="display-destination"></span> | Class: <span id="display-class"></span></p>
+        <p>Seat Number: <span id="display-seat-number"></span> | Bill: <span id="display-bill"></span></p>
+        <button id="download-pdf">Download PDF</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; Copyright Kahuta Travells. All Rights Reserved.</p>
+    <p>Contact us: <a href="mailto:info@kahutatravels.com">info@kahutatravels.com</a></p>
+  </footer>
+
+
+  <!-- Include jsPDF library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script>
+    const { jsPDF } = window.jspdf;
+
+    const originSelect = document.getElementById('origin');
+    const destinationSelect = document.getElementById('destination');
+
+    const cities = {
+      islamabad: ['Lahore', 'Karachi'],
+      lahore: ['Islamabad', 'Karachi'],
+      karachi: ['Islamabad', 'Lahore']
+    };
+
+    const travelDetails = {
+      'islamabad-lahore': { simple: 1000, business: 1500 },
+      'lahore-islamabad': { simple: 1000, business: 1500 },
+      'islamabad-karachi': { simple: 4000, business: 8000 },
+      'karachi-islamabad': { simple: 4000, business: 8000 },
+      'lahore-karachi': { simple: 3000, business: 6000 },
+      'karachi-lahore': { simple: 3000, business: 6000 }
+    };
+
+    originSelect.addEventListener('change', function () {
+      const selectedOrigin = this.value;
+      const destinations = cities[selectedOrigin];
+
+      destinationSelect.innerHTML = '<option value="">Select Destination City</option>';
+      destinations.forEach(function (destination) {
+        const option = document.createElement('option');
+        option.value = destination.toLowerCase();
+        option.textContent = destination;
+        destinationSelect.appendChild(option);
+      });
+    });
+
+    document.getElementById('reservation-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const cnic = document.getElementById('cnic').value;
+      const phone = document.getElementById('phone').value;
+      const travelDate = document.getElementById('travel-date').value;
+      const origin = document.getElementById('origin').value;
+      const destination = document.getElementById('destination').value;
+      const travelClass = document.getElementById('class').value;
+
+      const route = `${origin}-${destination}`;
+      const bill = travelClass === 'business' ? travelDetails[route].business : travelDetails[route].simple;
+
+      const seatNumber = Math.floor(Math.random() * 50) + 1;
+
+      document.getElementById('display-cnic').textContent = cnic;
+      document.getElementById('display-phone').textContent = phone;
+      document.getElementById('display-travel-date').textContent = travelDate;
+      document.getElementById('display-origin').textContent = origin;
+      document.getElementById('display-destination').textContent = destination;
+      document.getElementById('display-class').textContent = travelClass;
+      document.getElementById('display-seat-number').textContent = seatNumber;
+      document.getElementById('display-bill').textContent = `Rs ${bill}`;
+
+      // Hide the book button after form submission
+      document.getElementById('book-button').style.display = 'none';
+
+      document.getElementById('reservation-details').classList.remove('hidden');
+    });
+
+    document.getElementById('download-pdf').addEventListener('click', function () {
+      const cnic = document.getElementById('display-cnic').textContent;
+      const phone = document.getElementById('display-phone').textContent;
+      const travelDate = document.getElementById('display-travel-date').textContent;
+      const origin = document.getElementById('display-origin').textContent;
+      const destination = document.getElementById('display-destination').textContent;
+      const travelClass = document.getElementById('display-class').textContent;
+      const seatNumber = document.getElementById('display-seat-number').textContent;
+      const bill = document.getElementById('display-bill').textContent;
+
+      const doc = new jsPDF();
+
+      // Load the logo image
+      const img = new Image();
+      img.src = 'images/logo.jpg';
+      img.onload = function () {
+        // Add the logo to the PDF
+        doc.addImage(img, 'JPEG', 150, 10, 40, 40);
+
+        doc.text('Reservation Details', 20, 20);
+        doc.text(`CNIC: ${cnic}`, 20, 60);
+        doc.text(`Phone: ${phone}`, 20, 70);
+        doc.text(`Travel Date: ${travelDate}`, 20, 80);
+        doc.text(`Origin: ${origin}`, 20, 90);
+        doc.text(`Destination: ${destination}`, 20, 100);
+        doc.text(`Class: ${travelClass}`, 20, 110);
+        doc.text(`Seat Number: ${seatNumber}`, 20, 120);
+        doc.text(`Bill: ${bill}`, 20, 130);
+
+        doc.save('reservation-details.pdf');
+      };
+    });
+  </script>
+</body>
+
+</html>
+
