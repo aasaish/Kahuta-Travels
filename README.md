@@ -12,7 +12,7 @@ Reservation System: Central to the platform is our robust reservation system. Us
 
 User Authentication: To ensure security and personalized service, the reservation process requires users to log in or sign up. This feature allows us to tailor booking options and provide users with access to their booking history and preferences.
 
-Ticket Generation: Upon successful reservation, users can instantly generate downloadable tickets in PDF format. These tickets contain vital journey details such as seat numbers, departure times, and bus information, ensuring a seamless travel experience.
+Ticket Generation: Upon successful reservation, users can instantly generate downloadable tickets in PDF format. JavaScript is used alongside PHP to dynamically create and deliver these tickets, which contain vital journey details such as seat numbers, departure times, and bus information, ensuring a seamless travel experience.
 
 Technological Implementation:
 
@@ -20,4 +20,4 @@ Backend: Developed using PHP and MySQL, the backend supports efficient data mana
 
 Frontend: Utilizes HTML5, CSS3, and JavaScript to create a responsive and intuitive user interface. The design focuses on accessibility and ease of use across various devices, from desktops to smartphones.
 
-PDF Generation: Integrates PDF generation libraries to dynamically create and deliver tickets, enhancing convenience for users while maintaining a professional presentation of booking information.
+PDF Generation: Integrates JavaScript libraries for PDF generation, enhancing convenience for users while maintaining a professional presentation of booking information.
